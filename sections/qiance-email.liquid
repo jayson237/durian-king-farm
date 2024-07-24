@@ -1,204 +1,217 @@
-<div class="my-subscribe container--no-mobile-padding section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="subscribe">
+<div
+  class="my-subscribe container--no-mobile-padding section-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="subscribe"
+>
   {% style %}
-    .large-section{
-      background:{{ section.settings.backcolor }};
-    }
-    .btn{
-      background:{{ section.settings.btncolor }} !important;
-    }
-    .section-{{ section.id }} .subscribe-section{
-      padding-top: 4%;
-      padding-bottom: 6%;
-      display: flex;
-      flex-direction: column;
-      {% if section.settings.image != blank %}
-        padding-bottom: 8%;
-        background:url({{section.settings.image|img_url:'master'}}) no-repeat;
-        background-size: cover;
-        background-position: center bottom;
-      {% endif %}}
-    }
-    .my-subscribe .subscribe-content{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .my-subscribe .subscribe-content p{
-      display: flex;
-      align-items: center;
-      font-size: 30px;
-      margin:0;
-      width: 100%;
-      color: black;
-    }
-    #{{ section.id }} .cct{
-      font-size: 30px;
-      margin:0;
-      color: {{ section.settings.succeedTextcolor }} !important;
-      text-align: center;
-      line-height: 63px;
-      height: 63px;
-      background: {{ section.settings.succeedbackcolor }} !important;
-    }
-    .my-subscribe .subscribe-content p img {
-      width: auto;
-      margin-right:16px;
-    }
-    .my-subscribe .subscribe-content__title{
-      font-weight: bold;
-      font-size: 53px;
-      margin:2% 0;
-      white-space:nowrap;
-    }
-    .my-subscribe .subscribe-form{
-      width: 600px;
-      margin: 50px auto 0;
-      padding-left: 80px;
-      padding-right: 30px;
-    }
-    @media (min-width:1051px){
-    .subscribe-content.my-subscribe-content{
-      width: 611px;
-      margin:auto;
-    }
-      .my-subscribe .subscribe-form{width: 712px;}
-    }
-    .my-subscribe .subscribe-form__inputs{
-      border: unset;
-      display:flex;
-    }
-    .my-subscribe .input-wrapper{
-      width:60%;
-    }
-    .my-subscribe .subscribe-form__email{
-      border: 1px solid #C6C6C6;
-      height: 54px;
-      width: 100%;
-      padding: 1rem 1.5rem;
-      background: transparent;
-      border-radius: 4px
-    }
-    .my-subscribe .subscribe-form__email::placeholder{
-      color: #C6C6C6;
-      font-size:16px;
-    }
-    .my-submit{
-      width: 40%;
-      padding-left: 20px;
-    }
-    .my-subscribe button{
-      height: 54px;
-      font-size: 30px;
-      font-weight: bold;
-      line-height: 30px;
-      background:#ff0050;
-      width:100%;
-      border:unset;
-      cursor:pointer;
-      color:#fff;
-      border-radius: 4px;
-      text-transform: capitalize;
-    }
-    .subscribe-form__response p{
-      margin-top:0;
-    }
-  @media (min-width:768px) and (max-width:1050px){
-    .my-subscribe .subscribe-content__title{font-size: 40px;}
-    .my-subscribe .subscribe-content p, #{{ section.id }}.cct{font-size: 24px;}
-    .my-subscribe .subscribe-form{ margin:30px auto 0;}
-  }
-    @media (max-width: 767px) {
+      .large-section{
+        background:{{ section.settings.backcolor }};
+      }
+      .btn{
+        background:{{ section.settings.btncolor }} !important;
+      }
       .section-{{ section.id }} .subscribe-section{
-        padding: 5% 0 10%;
+        padding-top: 4%;
+        padding-bottom: 6%;
+        display: flex;
+        flex-direction: column;
         {% if section.settings.image != blank %}
-        background-position: 60% bottom;
-      {% endif %}
+          padding-bottom: 8%;
+          background:url({{section.settings.image|img_url:'master'}}) no-repeat;
+          background-size: cover;
+          background-position: center bottom;
+        {% endif %}
       }
-      .my-subscribe .my-subscribe-content{
-        width: 90%;
-    margin: auto;
+      .my-subscribe .subscribe-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .my-subscribe .subscribe-content__title{font-size: 7vw;}
       .my-subscribe .subscribe-content p{
-        font-size: 4vw;
-        text-align: left;
-        margin-bottom: 3px;
-        width:100%;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        margin:0;
+        width: 100%;
+        color: black;
       }
-       #{{ section.id }} .cct{
-        font-size: 6vw;
-        margin: 0;
-    color: {{ section.settings.succeedTextcolor }} !important;
-    text-align: center;
-    line-height: 71px;
-    height: 71px;
-    background: {{ section.settings.succeedbackcolor }} !important;
+      #{{ section.id }} .cct{
+        font-size: 30px;
+        margin:0;
+        color: {{ section.settings.succeedTextcolor }} !important;
+        text-align: center;
+        line-height: 63px;
+        height: 63px;
+        background: {{ section.settings.succeedbackcolor }} !important;
       }
-      .my-subscribe .subscribe-content img{
-        width:auto;
-        height: auto;
+      .my-subscribe .subscribe-content p img {
+        width: auto;
+        margin-right:16px;
+      }
+      .my-subscribe .subscribe-content__title{
+        font-weight: bold;
+        font-size: 53px;
+        margin:2% 0;
+        white-space:nowrap;
       }
       .my-subscribe .subscribe-form{
-        margin: 16px 0 0;
-        width:100%;
+        width: 600px;
+        margin: 50px auto 0;
+        padding-left: 80px;
+        padding-right: 30px;
+      }
+      @media (min-width:1051px){
+      .subscribe-content.my-subscribe-content{
+        width: 611px;
+        margin:auto;
+      }
+        .my-subscribe .subscribe-form{width: 712px;}
+      }
+      .my-subscribe .subscribe-form__inputs{
+        border: unset;
+        display:flex;
+      }
+      .my-subscribe .input-wrapper{
+        width:60%;
+      }
+      .my-subscribe .subscribe-form__email{
+        border: 1px solid #C6C6C6;
+        height: 54px;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background: transparent;
+        border-radius: 4px
+      }
+      .my-subscribe .subscribe-form__email::placeholder{
+        color: #C6C6C6;
+        font-size:16px;
+      }
+      .my-submit{
+        width: 40%;
         padding-left: 20px;
-        padding-right: 20px;
       }
-      .my-subscribe .my-btns-box{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0 auto;
-        width: 100%;
+      .my-subscribe button{
+        height: 54px;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 30px;
+        background:#ff0050;
+        width:100%;
+        border:unset;
+        cursor:pointer;
+        color:#fff;
+        border-radius: 4px;
+        text-transform: capitalize;
       }
-      .my-subscribe .my-btns-inp{
-          width: 69%;
-          margin-bottom: 0;
-          height: 36px;
+      .subscribe-form__response p{
+        margin-top:0;
       }
-
-      .my-subscribe .my-btns-inp input{
+    @media (min-width:768px) and (max-width:1050px){
+      .my-subscribe .subscribe-content__title{font-size: 40px;}
+      .my-subscribe .subscribe-content p, #{{ section.id }}.cct{font-size: 24px;}
+      .my-subscribe .subscribe-form{ margin:30px auto 0;}
+    }
+      @media (max-width: 767px) {
+        .section-{{ section.id }} .subscribe-section{
+          padding: 5% 0 10%;
+          {% if section.settings.image != blank %}
+          background-position: 60% bottom;
+        {% endif %}
+        }
+        .my-subscribe .my-subscribe-content{
+          width: 90%;
+      margin: auto;
+        }
+        .my-subscribe .subscribe-content__title{font-size: 7vw;}
+        .my-subscribe .subscribe-content p{
+          font-size: 4vw;
+          text-align: left;
+          margin-bottom: 3px;
+          width:100%;
+        }
+         #{{ section.id }} .cct{
+          font-size: 6vw;
+          margin: 0;
+      color: {{ section.settings.succeedTextcolor }} !important;
+      text-align: center;
+      line-height: 71px;
+      height: 71px;
+      background: {{ section.settings.succeedbackcolor }} !important;
+        }
+        .my-subscribe .subscribe-content img{
+          width:auto;
+          height: auto;
+        }
+        .my-subscribe .subscribe-form{
+          margin: 16px 0 0;
+          width:100%;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .my-subscribe .my-btns-box{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .my-subscribe .my-btns-inp{
+            width: 69%;
+            margin-bottom: 0;
             height: 36px;
+        }
+
+        .my-subscribe .my-btns-inp input{
+              height: 36px;
+        }
+        .my-subscribe .my-btns-inp input::placeholder{
+          font-size:14px;
+        }
+        .my-subscribe .my-submit{
+          width: 31%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          float: unset;
+          padding-left: 10px;
+        }
+        .my-subscribe .my-submit button{
+          margin-top: 0;
+          font-size: 4vw;
+          line-height: 4vw;
+          min-width: unset;
+          padding: 0;
+          height: 36px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
-      .my-subscribe .my-btns-inp input::placeholder{
-        font-size:14px;
+      @media (max-width: 460px) {
+        .my-subscribe .subscribe-content p img{
+          height: 8px;
+          margin-right: 8px;
+        }
       }
-      .my-subscribe .my-submit{
-        width: 31%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        float: unset;
-        padding-left: 10px;
-      }
-      .my-subscribe .my-submit button{
-        margin-top: 0;
-        font-size: 4vw;
-        line-height: 4vw;
-        min-width: unset;
-        padding: 0;
-        height: 36px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    @media (max-width: 460px) {
-      .my-subscribe .subscribe-content p img{
-        height: 8px;
-        margin-right: 8px;
-      }
-    }
   {% endstyle %}
 
   <div class="subscribe-section large-section" id="{{ section.id }}">
     <div class="reading-width subscribe-content my-subscribe-content">
-      <h2 class="my-title subscribe-content__title {% if section.settings.enlarge_title %} giant-title{% else %} large-title{% endif %}">{{ section.settings.title }}</h2>  
+      <h2 class="my-title subscribe-content__title {% if section.settings.enlarge_title %} giant-title{% else %} large-title{% endif %}">
+        {{ section.settings.title }}
+      </h2>
       {% for block in section.blocks %}
         <p>
           {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | img_url: '40x40' }}" alt="{{ block.settings.image.alt | escape }}" class="rimage__image" width="8" height="8" loading="lazy">
+            <img
+              src="{{ block.settings.image | img_url: '40x40' }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              class="rimage__image"
+              width="8"
+              height="8"
+              loading="lazy"
+            >
           {% endif %}
           {{ block.settings.text }}
         </p>
@@ -208,7 +221,7 @@
       {% form 'customer' %}
         {% if form.posted_successfully? %}
           <div class="subscribe-form__response subscribe-form__response--success">
-            <h4 class="cct" >Thanks for your subscription!</h4>
+            <h4 class="cct">Thanks for your subscription!</h4>
           </div>
           <script>
             // '{{ section.settings.url | escape }}
@@ -220,15 +233,23 @@
           {% if form.errors %}
             <div class="subscribe-form__response">
               {% for field in form.errors %}
-              <p class="error-message cct" >{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
+                <p class="error-message cct">{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
               {% endfor %}
             </div>
           {% endif %}
-          <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ section.settings.tag | escape }}"/>
+          <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ section.settings.tag | escape }}">
           <div class="subscribe-form__inputs my-btns-box">
             <div class="input-wrapper two-thirds small-down--one-whole my-btns-inp">
               <!-- <label class="subscribe-form__label" for="mailinglist_email">Please enter your email</label> -->
-              <input type="email" required class="subscribe-form__email required one-third" value="" placeholder="Sign up with your email" id="mailinglist_email" name="contact[email]" />
+              <input
+                type="email"
+                required
+                class="subscribe-form__email required one-third"
+                value=""
+                placeholder="Sign up with your email"
+                id="mailinglist_email"
+                name="contact[email]"
+              >
             </div>
             <div class="my-submit one-third small-down--one-whole">
               <button class="btn subscribe-form__submit" type="submit">{{ section.settings.btnText }}</button>
@@ -240,107 +261,103 @@
   </div>
 </div>
 
-
 <script>
-// 监听滚动事件，记录用户当前滚动页面的距离
-window.addEventListener('scroll', function() {
-  console.log(123123)
-  sessionStorage.setItem('scrollPosition', window.scrollY);
-});
+  // 监听滚动事件，记录用户当前滚动页面的距离
+  window.addEventListener('scroll', function () {
+    console.log(123123);
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  });
 
-// 提交表单后，页面会刷新到指定链接
-// 在页面加载时，将之前记录的滚动距离设置回去
-window.addEventListener('load', function() {
-  var scrollPosition = sessionStorage.getItem('scrollPosition');
-  if (scrollPosition) {
-    window.scrollTo(0, parseInt(scrollPosition));
-    sessionStorage.removeItem('scrollPosition'); // 清除保存的滚动距离，以免影响下次操作
-  }
-});
-
-
+  // 提交表单后，页面会刷新到指定链接
+  // 在页面加载时，将之前记录的滚动距离设置回去
+  window.addEventListener('load', function () {
+    var scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition));
+      sessionStorage.removeItem('scrollPosition'); // 清除保存的滚动距离，以免影响下次操作
+    }
+  });
 </script>
 
 {% schema %}
-  {
-    "name": "qiance-email",
-    "tag": "section",
-    "class": "section-newsletter",
-    "settings": [
-      {
-        "type": "color",
-        "id": "backcolor",
-        "label": "背景颜色"
-      },
-      {
-        "type": "color",
-        "id": "btncolor",
-        "label": "按钮颜色"
-      },
-      {
-        "type": "color",
-        "id": "succeedTextcolor",
-        "label": "订阅成功之后提示信息文字颜色",
-        "default": "#1d201e"
-      },
-      {
-        "type": "color",
-        "id": "succeedbackcolor",
-        "label": "订阅成功之后提示信息背景颜色",
-        "default": "#fff"
-      },
-      {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Icon",
-            "info": "icon"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Heading",
-        "default": "Subscribe Now To Get"
-      },
-      {
-        "type": "text",
-        "id": "tag",
-        "label": "Tag"
-      },
-      {
-        "type": "text",
-        "id": "url",
-        "label": "订阅成功后跳转的地址"
-      },
-      {
-        "type": "text",
-        "id": "btnText",
-        "label": "按钮文案"
-      }
-    ],
-    "blocks":[
-      {
-        "type": "block",
-        "name": "block",
-        "settings":[
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Icon",
-            "info": "icon"
-          },
-          {
-            "type": "text",
-            "id": "text",
-            "label": "Text"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "qiance-email"
-      }
-    ]
-  }
-
+{
+  "name": "qiance-email",
+  "tag": "section",
+  "class": "section-newsletter",
+  "settings": [
+    {
+      "type": "color",
+      "id": "backcolor",
+      "label": "背景颜色"
+    },
+    {
+      "type": "color",
+      "id": "btncolor",
+      "label": "按钮颜色"
+    },
+    {
+      "type": "color",
+      "id": "succeedTextcolor",
+      "label": "订阅成功之后提示信息文字颜色",
+      "default": "#1d201e"
+    },
+    {
+      "type": "color",
+      "id": "succeedbackcolor",
+      "label": "订阅成功之后提示信息背景颜色",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Icon",
+      "info": "icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Subscribe Now To Get"
+    },
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "订阅成功后跳转的地址"
+    },
+    {
+      "type": "text",
+      "id": "btnText",
+      "label": "按钮文案"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon",
+          "info": "icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "qiance-email"
+    }
+  ]
+}
 {% endschema %}
