@@ -1,145 +1,149 @@
-
 <style>
-@font-face {
-  font-family: "Barlow";
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  src: url(https://cdn.shopify.com/s/files/1/0867/6373/3305/files/Monotype_-_Helvetica_Now_Display_Bold.otf?v=1711532228) format('opentype');
-}
-@font-face {
-  font-family: "Barlow";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url(https://cdn.shopify.com/s/files/1/0867/6373/3305/files/Monotype_-_Helvetica_Now_Display.otf?v=1711532228) format('opentype');
-}
-/* 邮箱板块标题 */
-.my-subscribe .subscribe-content__title{
-  font-family: "Barlow";
-  font-weight: bold;
-}
-/* 邮箱板块下面的小标题 */
-.my-subscribe .subscribe-content p{
+  @font-face {
+    font-family: "Barlow";
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://cdn.shopify.com/s/files/1/0867/6373/3305/files/Monotype_-_Helvetica_Now_Display_Bold.otf?v=1711532228) format('opentype');
+  }
+  @font-face {
     font-family: "Barlow";
     font-weight: 400;
-}
-/* 邮箱按钮 */
-.my-subscribe button{
-  font-family: "Barlow";
-  font-weight: bold;
-}
-body{
-  background: #1F1F1F;
-  color: #FFF;
-}
-div#tidio-chat,.notification-bar,.imageSlideshow,.site-footer,.needsclick{display:none!important;}
-img{
-  width:100%;
-  height:auto;
-}
-.ccttop{
-      font-size: 30px;
-      margin:0;
-      color: {{ section.settings.succeedTextcolor }} !important;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://cdn.shopify.com/s/files/1/0867/6373/3305/files/Monotype_-_Helvetica_Now_Display.otf?v=1711532228) format('opentype');
+  }
+  /* 邮箱板块标题 */
+  .my-subscribe .subscribe-content__title{
+    font-family: "Barlow";
+    font-weight: bold;
+  }
+  /* 邮箱板块下面的小标题 */
+  .my-subscribe .subscribe-content p{
+      font-family: "Barlow";
+      font-weight: 400;
+  }
+  /* 邮箱按钮 */
+  .my-subscribe button{
+    font-family: "Barlow";
+    font-weight: bold;
+  }
+  body{
+    background: #1F1F1F;
+    color: #FFF;
+  }
+  div#tidio-chat,.notification-bar,.imageSlideshow,.site-footer,.needsclick{display:none!important;}
+  img{
+    width:100%;
+    height:auto;
+  }
+  .ccttop{
+        font-size: 30px;
+        margin:0;
+        color: {{ section.settings.succeedTextcolor }} !important;
+        text-align: center;
+        line-height: 63px;
+        height: 63px;
+        background: {{ section.settings.succeedbackcolor }} !important;
+  }
+  .reading-width {
+      margin: 0 auto;
+      max-width: 960px;
+      padding-left: 30px;
+      padding-right: 30px;
+  }
+  .img-m{
+      display: none;
+  }
+  @media (max-width: 767px) {
+            font-size: 6vw;
+          margin: 0;
       text-align: center;
-      line-height: 63px;
-      height: 63px;
-      background: {{ section.settings.succeedbackcolor }} !important;
-}
-.reading-width {
-    margin: 0 auto;
-    max-width: 960px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.img-m{
-    display: none;
-}
-@media (max-width: 767px) {
-          font-size: 6vw;
-        margin: 0;
-    text-align: center;
-    line-height: 71px;
-    height: 71px;
-}
-.img-pc{
-    display: none;
-}
-.img-m{
-    display: block;
-}
-.reading-width{
-padding-left: 20px;
-    padding-right: 30px;
-}
+      line-height: 71px;
+      height: 71px;
+  }
+  .img-pc{
+      display: none;
+  }
+  .img-m{
+      display: block;
+  }
+  .reading-width{
+  padding-left: 20px;
+      padding-right: 30px;
+  }
 </style>
 <!-- <div class="klaviyo-form-TycgQT"></div> -->
 <div class="top-subscribe section-{{ section.id }}" id="section-{{ section.id }}">
   <div class="top-subscribe-content">
-    <!-- <h1 class="top-subscribe-title">
-      Subscribe for Super Early Bird Offer
-    </h1> -->
+    <!--
+      <h1 class="top-subscribe-title">
+        Subscribe for Super Early Bird Offer
+      </h1>
+    -->
     {% form 'customer' %}
-        {% if form.posted_successfully? %}
-          <div class="subscribe-form__response subscribe-form__response--success">
-            <p class="ccttop" style = "margin-bottom:0; text-align: center;">Thanks for your subscription!</p>
-          </div>
-          <script>
-            /// ?????'{{ section.settings.url | escape }}
-            {% if section.settings.url != blank %}
-                setTimeout(()=>{location.href = '{{ section.settings.url | escape }}' + '?t=' + new Date().getTime()}, 2000)
-            {% endif %}
-          </script>
-        {% else %}
-          {% if form.errors %}
-            <div class="subscribe-form__response">
-              {% for field in form.errors %}
-                <p class="error-message cct" style = " font-family: 'Manrope-light';text-align: center;">{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
-              {% endfor %}
-            </div>
+      {% if form.posted_successfully? %}
+        <div class="subscribe-form__response subscribe-form__response--success">
+          <p class="ccttop" style="margin-bottom:0; text-align: center;">Thanks for your subscription!</p>
+        </div>
+        <script>
+          /// ?????'{{ section.settings.url | escape }}
+          {% if section.settings.url != blank %}
+              setTimeout(()=>{location.href = '{{ section.settings.url | escape }}' + '?t=' + new Date().getTime()}, 2000)
           {% endif %}
-          <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ section.settings.tag | escape }}"/>
-            <div class="subscribe-form__inputs my-btns-box my-btns-box{{ section.id }}">
-              <div class="input-wrapper two-thirds small-down--one-whole my-btns-inp is-empty">
-                <!-- <label class="subscribe-form__label" for="mailinglist_email">Please enter your email</label> -->
-                <input
-                  type="email"
-                  required=""
-                  class="subscribe-form__email"
-                  value=""
-                  placeholder="Sign up with your email"
-                  id="mailinglist_email"
-                  name="contact[email]">
-              </div>
-              <div class="my-submit one-third small-down--one-whole">
-                <button class="btn  btn--secondary subscribe-form__submit" type="submit">{{ section.settings.btnText }}</button>
-              </div>
-            </div>
+        </script>
+      {% else %}
+        {% if form.errors %}
+          <div class="subscribe-form__response">
+            {% for field in form.errors %}
+              <p class="error-message cct" style=" font-family: 'Manrope-light';text-align: center;">
+                {{ field | capitalize }} - {{ form.errors.messages[field] }}
+              </p>
+            {% endfor %}
+          </div>
         {% endif %}
-      {% endform %}
+        <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ section.settings.tag | escape }}">
+        <div class="subscribe-form__inputs my-btns-box my-btns-box{{ section.id }}">
+          <div class="input-wrapper two-thirds small-down--one-whole my-btns-inp is-empty">
+            <!-- <label class="subscribe-form__label" for="mailinglist_email">Please enter your email</label> -->
+            <input
+              type="email"
+              required=""
+              class="subscribe-form__email"
+              value=""
+              placeholder="Sign up with your email"
+              id="mailinglist_email"
+              name="contact[email]"
+            >
+          </div>
+          <div class="my-submit one-third small-down--one-whole">
+            <button class="btn  btn--secondary subscribe-form__submit" type="submit">
+              {{ section.settings.btnText }}
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    {% endform %}
   </div>
 </div>
 
-<script src="{{ 'lazy.js' | asset_url }}" defer></script>
+<script src="{{ 'lazy.js' | asset_url }}" defer="defer"></script>
 <script>
   document.onscroll = function (event) {
     const img1920 = document.querySelector('.img-1920');
     const subscribeSections = document.querySelectorAll('.subscribe-section');
 
-    if ( isElementInViewport(subscribeSections[0]) || isElementInViewport(subscribeSections[1])) {
+    if (isElementInViewport(subscribeSections[0]) || isElementInViewport(subscribeSections[1])) {
       document.getElementById('section-{{ section.id }}').classList.remove('a');
     } else {
       document.getElementById('section-{{ section.id }}').classList.add('a');
     }
-  }
-  
+  };
+
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return rect.bottom > 0 && rect.top < window.innerHeight;
   }
-
-
 </script>
 
 {% style %}
@@ -165,7 +169,7 @@ padding-left: 20px;
     cursor: pointer;
     border-radius: 4px;
     text-transform: capitalize;
-    
+
   }
   .top-subscribe input.subscribe-form__email{
     padding: 1rem;
@@ -195,7 +199,7 @@ padding-left: 20px;
     background: #1f1f1fd6;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     top: 0;
     left: 0;
   }
@@ -207,7 +211,7 @@ padding-left: 20px;
     font-size: 20px;
     text-align: left;
   }
-  
+
   @media (max-width: 1400px) {
     .top-subscribe-content{width:40%;}
   }
@@ -258,18 +262,18 @@ padding-left: 20px;
   "name": "top-tan",
   "tag": "section",
   "settings": [
-      {
-        "type": "color",
-        "id": "succeedTextcolor",
-        "label": "订阅成功之后提示信息文字颜色",
-        "default": "#1d201e"
-      },
-      {
-        "type": "color",
-        "id": "succeedbackcolor",
-        "label": "订阅成功之后提示信息背景颜色",
-        "default": "#fff"
-      },
+    {
+      "type": "color",
+      "id": "succeedTextcolor",
+      "label": "订阅成功之后提示信息文字颜色",
+      "default": "#1d201e"
+    },
+    {
+      "type": "color",
+      "id": "succeedbackcolor",
+      "label": "订阅成功之后提示信息背景颜色",
+      "default": "#fff"
+    },
     {
       "type": "text",
       "id": "tag",
@@ -280,11 +284,11 @@ padding-left: 20px;
       "id": "url",
       "label": "订阅成功后跳转的地址"
     },
-      {
-        "type": "text",
-        "id": "btnText",
-        "label": "按钮文案"
-      }
+    {
+      "type": "text",
+      "id": "btnText",
+      "label": "按钮文案"
+    }
   ],
   "presets": [
     {
