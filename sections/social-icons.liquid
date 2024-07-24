@@ -1,0 +1,58 @@
+<section class="social-icons">
+  <div class="icon-row">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.link }}" target="_blank" class="social-icon">
+        <img src="{{ block.settings.icon | image_url }}" alt="Social Icon" width="32" height="32">
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .social-icons .icon-row {
+    display: flex;
+    gap: 40px;
+  }
+
+  .social-icons .social-icon img {
+    max-width: 32px;
+    height: 32px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Social Icons",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "social_icon",
+      "name": "Social Icon",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Icons",
+      "category": "Social Media"
+    }
+  ]
+}
+{% endschema %}
